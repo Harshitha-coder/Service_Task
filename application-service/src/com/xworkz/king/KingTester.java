@@ -11,10 +11,10 @@ public class KingTester {
 
 	public static void main(String[] args) {
 
-		KingDTO king1 = new KingDTO("Vikramadithya", "Buddism", "Chalukyas of Kalyana", 32, "Kethaladevi", 5);
-		KingDTO king2 = new KingDTO("Krishna Raja Wadiyar", "Hinduism", "Mysore Wodeyars", 31, "Kumari Ammani", 6);
-		KingDTO king3 = new KingDTO("Pulakeshi", "Jainism", "Chalukya", 33, "Kritivarma", 4);
-		KingDTO king4 = new KingDTO("Yaduraya Wadiyar", "Hinduism", "Mysore Wodeyars", 34, "Trishika Kumari Devi", 5);
+		KingDTO king1 = new KingDTO("Vikramadithya", "Bagalkot", "Chalukyas of Kalyana", 32, "Kethaladevi", 5);
+		KingDTO king2 = new KingDTO("Krishna Raja Wadiyar", "Mysore", "Mysore Wodeyars", 31, "Kumari Ammani", 6);
+		KingDTO king3 = new KingDTO("Pulakeshi", "Bagalkot", "Chalukya", 33, "Kritivarma", 4);
+		KingDTO king4 = new KingDTO("Yaduraya Wadiyar", "Mysore", "Mysore Wodeyars", 34, "Trishika Kumari Devi", 5);
 
 		KingService service = new KingServiceImpl();
 		service.validateAndSave(king4);
@@ -22,7 +22,7 @@ public class KingTester {
 		service.validateAndSave(king3);
 		service.validateAndSave(king1);
 
-		Collection<KingDTO> collection = service.validateAndFindByRegion((s) -> s.getRegion().equals("Hinduism"));
+		Collection<KingDTO> collection = service.validateAndFindByRegion((s) -> s.getRegion().equals("Mysore"));
 		for (KingDTO kingDTO : collection) {
 			System.out.println("found by region:" + kingDTO);
 		}
